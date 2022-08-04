@@ -1,0 +1,5 @@
+main: ml.savdev.sugarmcskyblockaddon.SugarMCSkyblockAddon
+name: SugarMCSkyblockAddon
+version: 1.0.0
+depend:
+  - SuperiorSkyblock2
