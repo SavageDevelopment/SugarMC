@@ -1,0 +1,39 @@
+package ml.savdev.sugarmcskyblockaddon.events;
+
+import com.bgsoftware.superiorskyblock.api.events.IslandEvent;
+import com.bgsoftware.superiorskyblock.api.island.Island;
+import com.bgsoftware.superiorskyblock.api.wrappers.SuperiorPlayer;
+import org.bukkit.ChatColor;
+import org.bukkit.entity.Player;
+import org.bukkit.event.Cancellable;
+
+
+public class IslandCreateEvent extends IslandEvent implements Cancellable {
+
+    private final SuperiorPlayer superiorPlayer;
+    private final String schematic;
+    private boolean teleport = true;
+    private boolean cancelled = false;
+
+    public IslandCreateEvent(SuperiorPlayer superiorPlayer, Island island, String schematic) {
+        super(island);
+        this.superiorPlayer = superiorPlayer;
+        this.schematic = schematic;
+
+        Player target = superiorPlayer.asPlayer();
+
+        target.sendTitle(ChatColor.GREEN + "Island Created!", ChatColor.DARK_GREEN + "Use /missions to get started!", 10, 70, 20);
+
+    }
+
+    @Override
+    public boolean isCancelled() {
+        return cancelled;
+    }
+
+    @Override
+    public void setCancelled(boolean cancelled) {
+        this.cancelled = cancelled;
+    }
+
+}
