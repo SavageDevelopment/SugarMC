@@ -1,0 +1,20 @@
+package ml.savdev.sugarmcskyblockaddon;
+
+import org.bukkit.ChatColor;
+import org.bukkit.plugin.java.JavaPlugin;
+
+public class SugarMCSkyblockAddon extends JavaPlugin {
+
+    @Override
+    public void onEnable()
+    {
+        getServer().getConsoleSender().sendMessage(ChatColor.GREEN + "[SugarMC Skyblock Addon] Hooked into SuperiorSkyblock2!");
+    }
+
+    @Override
+    public void onDisable()
+    {
+        getServer().getConsoleSender().sendMessage(ChatColor.RED + "[SugarMC Skyblock Addon] This addon has been disabled!");
+    }
+
+}
